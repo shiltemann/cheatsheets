@@ -122,7 +122,8 @@ in command: `$mysection.sectionparam1`
 
 <!-- with filter -->
 <data name="myoutput" format="datatype" label="${tool.name} on ${on_string}: description">
-    <filter>infile or myconditional['conditional_pname'] == 'option1'
+    <filter>infile
+            or myconditional['conditional_pname'] == 'option1'
             or (not myboolean and myinteger > 42)
             or 'option1' in mymultiselect
     </filter>
@@ -143,6 +144,7 @@ in command: `$mysection.sectionparam1`
     <param name="myfile" value="filename.in" ftype="datatype"/>
     <param name="myparam" value="myvalue"/>
     <param name="conditional_pname" value="option1"/>
+    <param name="sectionparam1" value="42"/>
     <repeat name="myrepeat">
         <param name="rparam1" value="val1"/>
         <param name="rparam2" value="val2"/>
@@ -179,7 +181,7 @@ Rscript ${__tool_directory__}/myscript.R
 ...
 ```
 
-detect filetype
+detect filetype (will also match subtypes, `$myfile.extension` will not):
 
 ```cheetah
 #if $myfile.is_of_type('datatype'):
@@ -189,7 +191,7 @@ detect filetype
 #end if
 ```
 
-set number of processors
+set number of processors:
 
 ```cheetah
 \${GALAXY_SLOTS:-4}
