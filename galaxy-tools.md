@@ -74,7 +74,7 @@ when `multiple=true` value is comma-separated string `option1,option2,option42`
 **conditionals:**
 ```xml
 <conditional name="myconditional">
-    <param name="pname" type="select" label="description" help="">
+    <param name="conditional_pname" type="select" label="description" help="">
         <option value="option1">description1</option>
         <option value="option2" selected="true">description2</option>
     </param>
@@ -97,6 +97,20 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
     <param name="rparam2" type="ptype" .. />
 </repeat>
 ```
+
+**sections:**
+
+```xml
+<section name="mysection" title="Advanced settings">
+    <param name="sectionparam1" type="ptype" .. />
+    <param name="sectionparam2" type="ptype" .. />
+    ...
+</section>
+```
+
+in command: `$mysection.sectionparam1`
+
+
 ### Outputs
 
 **dataset:**
@@ -108,7 +122,10 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
 
 <!-- with filter -->
 <data name="myoutput" format="datatype" label="${tool.name} on ${on_string}: description">
-    <filter>infile or myconditional['pname'] == 'option1' or (not myboolean and myinteger > 42) or 'option1' in mymultiselect</filter>
+    <filter>infile or myconditional['conditional_pname'] == 'option1'
+            or (not myboolean and myinteger > 42)
+            or 'option1' in mymultiselect
+    </filter>
 </data>
 ```
 
@@ -125,6 +142,7 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
 <test><!-- test description -->
     <param name="myfile" value="filename.in" ftype="datatype"/>
     <param name="myparam" value="myvalue"/>
+    <param name="conditional_pname" value="option1"/>
     <repeat name="myrepeat">
         <param name="rparam1" value="val1"/>
         <param name="rparam2" value="val2"/>
@@ -156,6 +174,9 @@ access script from install directory:
 
 ```cheetah
 ${__tool_directory__}/myscript.sh
+python ${__tool_directory__}/myscript.py
+Rscript ${__tool_directory__}/myscript.R
+...
 ```
 
 detect filetype
@@ -167,6 +188,14 @@ detect filetype
     <do something else>
 #end if
 ```
+
+set number of processors
+
+```cheetah
+\${GALAXY_SLOTS:-4}
+```
+
+(if `GALAXY_SLOTS` not set, this uses value 4)
 
 ### Macros
 
