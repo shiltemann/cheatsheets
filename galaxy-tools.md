@@ -152,6 +152,12 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
 
 ### Command
 
+access script from install directory:
+
+```cheetah
+${__tool_directory__}/myscript.sh
+```
+
 detect filetype
 
 ```cheetah
@@ -164,7 +170,7 @@ detect filetype
 
 ### Macros
 
-Example macros.xml:
+Example `macros.xml`:
 
 ```xml
 <macros>
