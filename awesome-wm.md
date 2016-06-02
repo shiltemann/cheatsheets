@@ -32,6 +32,7 @@
 | Mod4 + Control + k | Focus previous screen |
 | Mod4 + Escape      | Focus previously selected tag set |
 
+
 **Clients**
 
 | Key binding        | Function        |
@@ -42,6 +43,7 @@
 | Mod4 + f           | Set client fullscreen |
 | Mod4 + Shift + c   | Kill focused client |
 | Mod4 + t           | Mark a client |
+
 
 **Layout modification**
 
@@ -65,6 +67,7 @@
 | Mod4 + Shift + Control + 1-9 | Toggle tag on client |
 | Mod4 + Shift + F1-9     | Tag marked clients with tag |
 
+
 ### Mouse Bindings
 
 **Navigation**
@@ -75,6 +78,7 @@
 | Button4, Button5 on tag name | Switch to previous or next tag|
 | Button4, Button5 on root window | Switch to previous or next tag|
 | Button1, Button3, Button4, Button5 on layout symbol| Switch to previous or next layout|
+
 
 **Layout modification**
 
