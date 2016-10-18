@@ -153,6 +153,12 @@ in command: `$mysection.sectionparam1`
         <param name="rparam1" value="val3"/>
         <param name="rparam2" value="val4"/>
     </repeat>
+    <param name="my_input_collection">
+        <collection type="list">
+            <element name="sample1" ftype="ftype" value="file1.ext" />
+            <element name="sample2" ftype="ftype" value="file2.ext" />
+        </collection>
+    </param>
 
     <output name="outputname" file="filename.out" ftype="datatype" lines_diff="x"/>
     <output name="outputname" md5="ed659c0af6b78f710f53f45ea99b9bb" ftype="datatype"/>
