@@ -126,6 +126,7 @@ in command: `$mysection.sectionparam1`
             or myconditional['conditional_pname'] == 'option1'
             or (not myboolean and myinteger > 42)
             or 'option1' in mymultiselect
+            or myparam.ext == 'ftype'
     </filter>
 </data>
 ```
