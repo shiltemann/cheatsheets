@@ -215,6 +215,7 @@ Example `macros.xml`:
     <xml name="something">
         <requirements>
             <requirement type="package" version="0.1">myrequirement</requirement>
+            <yield/> <!-- if you want to be able to add more requirements in tool xml itself -->
         </requirements>
     </xml>
     <token name="@MY_TOKEN@">sometext</token>
@@ -235,6 +236,9 @@ Use xml macro:
 
 ```xml
 <expand macro="something"/>
+<expand macro="something_with_a_yield">
+    <requirement type="package" version="42">extra-requirement</requirement>
+</expand>
 ```
 
 Use token macro:
