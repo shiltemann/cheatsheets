@@ -41,6 +41,11 @@ just some examples for me to copy-paste from, definitely not complete or accurat
 <param name="myfile" type="data" format="datatype" optional="false" argument="--clarg" label="description" help=""/>
 ```
 
+**dataset collection:**  
+```xml
+<param name="input" type="data_collection" collection_type="pair|list" label="Input Collection"/>
+```
+
 **text:**
 ```xml
 <param name="mytext" type="text" value="default" size="100x5" label="description" help=""/>
