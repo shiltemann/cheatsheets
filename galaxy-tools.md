@@ -15,7 +15,7 @@ just some examples for me to copy-paste from, definitely not complete or accurat
     </requirements>
     <version_command>myprog --version</version_command>
     <command detect_errors="aggressive"><![CDATA[
-        your command goes here
+your command goes here
     ]]></command>
     <inputs>
     </inputs>
@@ -26,7 +26,7 @@ just some examples for me to copy-paste from, definitely not complete or accurat
         </test>
     </tests>
     <help><![CDATA[
-        help text goes here
+help text goes here
     ]]></help>
     <citations>
         <citation type="doi">42.4242/42</citation>
@@ -103,6 +103,18 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
 </repeat>
 ```
 
+in cheetah
+
+```cheetah
+#for $i $myrepeat
+    echo $i.rparam1
+#end if
+
+#for $i, $s in enumerate( $myrepeat )
+    echo "repeat number $s: $i.rparam1"
+#end if
+```
+
 **sections:**
 
 ```xml
@@ -115,6 +127,30 @@ in command: `$myconditional.pname` and `$myconditional.pname2`
 
 in command: `$mysection.sectionparam1`
 
+**validators:**
+
+[documentation](https://docs.galaxyproject.org/en/latest/dev/schema.html#id31)
+
+```xml
+<param name="myparam" type="text">
+    <validator type="empty_field" />
+    <validator type="length" min="42" message="length of your input must be at least 42" />
+    <validator type="regex" message="please match my regex">\S+</validator>
+</param>
+
+<param name="myparam" type="data">
+    <validator type="unspecified_build" />
+    <validator type="dataset_metadata_in_data_table" table_name="my_indexes" metadata_name="dbkey" metadata_column="dbkey" message="no indices currently available for the specified build." />
+</param>
+
+<param name="myparam" type="integer|float">
+    <validator type="in_range" min="0" max="100"/>
+</param>
+
+<param name="myparam" type="select">
+    <validator type="no_options" message="A built-in reference genome is not available for the build associated with the selected input file"/>
+</param>
+```
 
 ### Outputs
 
