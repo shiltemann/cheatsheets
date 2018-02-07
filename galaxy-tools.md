@@ -2,7 +2,40 @@
 
 just some examples for me to copy-paste from, definitely not complete or accurate
 
-### Skeleton
+### Shed yaml
+
+Create a `.shed.yml` file for automatic upload to toolshed using Planemo:
+
+```yaml
+name: toolname
+owner: owner
+categories:
+  - ToolShedCategory1
+  - ToolShedCategory2
+description: Tool description
+long_description: |
+    Longer tool description
+    newlines are okay
+remote_repository_url: https://github.com/project/repository
+homepage_url: http://www.example.org
+type: unrestricted
+```
+
+To make a suite of tools, add the following:
+
+```yaml
+auto_tool_repositories:
+  name_template: "{{ tool_id }}"
+  description_template: "Wrapper for application X: {{ tool_name }}."
+suite:
+  name: "suite_name"
+  description: "A suite of tools that does a cool thing"
+  long_description: |
+    Longer tool description
+    newlines are okay
+```
+
+### Tool Skeleton
 
 ```xml
 <tool id="tool_id" name="tool_name" version="0.1" profile="16.07">
