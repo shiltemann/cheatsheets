@@ -234,6 +234,12 @@ in command: `$mysection.sectionparam1`
             <element name="sample2" ftype="ftype" value="file2.ext" />
         </collection>
     </param>
+    <param name="my_input_pair">
+        <collection type="paired">
+            <element name="forward" ftype="ftype" value="fwd.ext" />
+            <element name="reverse" ftype="ftype" value="rev.ext" />
+        </collection>
+    </param>
 
     <output name="outputname" file="filename.out" ftype="datatype" lines_diff="x"/>
     <output name="outputname" md5="ed659c0af6b78f710f53f45ea99b9bb" ftype="datatype"/>
