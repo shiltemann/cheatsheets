@@ -215,7 +215,7 @@ in command: `$mysection.sectionparam1`
 ### Tests
 
 ```xml
-<test><!-- test description -->
+<test expect_num_outputs="4"><!-- test description -->
     <param name="myfile" value="filename.in" ftype="datatype"/>
     <param name="myparam" value="myvalue"/>
     <param name="conditional_pname" value="option1"/>
