@@ -40,9 +40,6 @@ suite:
 ```xml
 <tool id="" name="" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="20.01" license="MIT">
     <description></description>
-    <xrefs>
-        <xref type="bio.tools"></xref>
-    </xrefs>
     <macros>
         <token name="@TOOL_VERSION@">0.1.0</token>
         <token name="@VERSION_SUFFIX@">0</token>
@@ -55,6 +52,9 @@ suite:
     <edam_operations>
         <edam_operation>operation_TODO</edam_operation>
     </edam_operations>
+    <xrefs>
+        <xref type="bio.tools"></xref>
+    </xrefs>
     <requirements>
         <requirement type="package" version="@TOOL_VERSION@"></requirement>
     </requirements>
