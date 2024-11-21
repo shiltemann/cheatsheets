@@ -38,31 +38,57 @@ suite:
 ### Tool Skeleton
 
 ```xml
-<tool id="tool_id" name="tool_name" version="0.1" profile="16.07">
-    <description>tool description</description>
+<tool id="" name="" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="20.01" license="MIT">
+    <description></description>
+    <xrefs>
+        <xref type="bio.tools"></xref>
+    </xrefs>
     <macros>
-        <import>macros.xml</import>
+        <token name="@TOOL_VERSION@">0.1.0</token>
+        <token name="@VERSION_SUFFIX@">0</token>
     </macros>
+    <!-- TODO: please annotate this tool with topics and operations from http://edamontology.org -->
+    <!-- TODO: for more information see: https://galaxy-iuc-standards.readthedocs.io/en/latest/best_practices/tool_xml.html#edam-topics-and-operations -->
+    <edam_topics>
+        <edam_topic>topic_TODO</edam_topic>
+    </edam_topics>
+    <edam_operations>
+        <edam_operation>operation_TODO</edam_operation>
+    </edam_operations>
     <requirements>
-        <requirement type="package" version="0.1">name</requirement>
+        <requirement type="package" version="@TOOL_VERSION@"></requirement>
     </requirements>
-    <version_command>myprog --version</version_command>
-    <command detect_errors="aggressive"><![CDATA[
-your command goes here
+    <command detect_errors="exit_code"><![CDATA[
+        ## TODO: Fill in command using Cheetah templates
     ]]></command>
     <inputs>
     </inputs>
     <outputs>
     </outputs>
     <tests>
-        <test>
-        </test>
+
     </tests>
     <help><![CDATA[
-help text goes here
+
+.. class:: infomark
+
+**What it does**
+
+TODO: Fill in help in reStructuredText format (https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html)
+
+Usage
+.....
+
+
+**Input**
+
+
+**Output**
+
+
     ]]></help>
     <citations>
-        <citation type="doi">42.4242/42</citation>
+        <citation type="doi"> </citation>
     </citations>
 </tool>
 ```
