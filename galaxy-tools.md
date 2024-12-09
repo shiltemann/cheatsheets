@@ -229,6 +229,14 @@ in command: `$mysection.sectionparam1`
             or myparam.ext == 'ftype'
     </filter>
 </data>
+
+<!-- with change_format, given there is a parameter my_param based on which output format changes -->
+<data name="output_image" format="svg" label="${tool.name} on ${on_string}: Tree Image">
+    <change_format>
+        <when input="my_param" value="png" format="png"/>
+    </change_format>
+</data>
+
 ```
 
 **collection:**
