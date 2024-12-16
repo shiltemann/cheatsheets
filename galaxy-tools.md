@@ -58,6 +58,7 @@ suite:
     <requirements>
         <requirement type="package" version="@TOOL_VERSION@"></requirement>
     </requirements>
+    <version_command>mytool --version</version_command>
     <command detect_errors="exit_code"><![CDATA[
         ## TODO: Fill in command using Cheetah templates
     ]]></command>
